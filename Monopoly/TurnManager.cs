@@ -24,10 +24,26 @@ namespace Monopoly
 
         private void MovePlayer(IPlayer player, int rollValue)
         {
-            if (player.Location + rollValue > board.Locations.Count())
-                player.Location = (player.Location + rollValue) % board.Locations.Count();
-            else
-                player.Location += rollValue;
+            for (Int32 i = 0; i < rollValue - 1; i++)
+                PassByLocation(player);
+            
+            LandOnLocation(player);
+        }
+
+        private void PassByLocation(IPlayer player)
+        {
+            player.Location = (player.Location + 1) % board.Locations.Count();
+            var location = board.Locations.ToList()[player.Location];
+
+            location.PassedBy(player);
+        }
+
+        private void LandOnLocation(IPlayer player)
+        {
+            player.Location = (player.Location + 1) % board.Locations.Count();
+            var location = board.Locations.ToList()[player.Location];
+
+            location.LandedOn(player);
         }
 
         private Int32 RollDice()

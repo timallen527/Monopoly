@@ -5,6 +5,6 @@ namespace Monopoly
 {
     public interface IBoard
     {
-        IEnumerable<BoardLocation> Locations { get; }
+        IEnumerable<IBoardLocation> Locations { get; }
     }
 }

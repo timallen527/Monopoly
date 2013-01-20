@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Monopoly
 {
-    public class BoardLocation
+    public interface IBoardLocation
     {
+        void LandedOn(IPlayer player);
+        void PassedBy(IPlayer player);
     }
 }

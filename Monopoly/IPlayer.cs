@@ -9,5 +9,6 @@ namespace Monopoly
     {
         Int32 Location { get; set; }
         Boolean Enabled { get; set; }
+        Int32 Cash { get; set; }
     }
 }

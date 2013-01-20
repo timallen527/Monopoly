@@ -9,6 +9,7 @@ namespace Monopoly
     {
         private Int32 location;
         private Boolean enabled;
+        private Int32 cash;
         public String Name;
 
         public Player(String name)
@@ -28,6 +29,12 @@ namespace Monopoly
         {
             get { return enabled; }
             set { enabled = value; }
+        }
+
+        public Int32 Cash
+        {
+            get { return cash; }
+            set { cash = value; }
         }
     }
 }

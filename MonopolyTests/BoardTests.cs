@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Monopoly;
+using Monopoly.BoardLocations;
 
 namespace MonopolyTests
 {
@@ -13,14 +14,13 @@ namespace MonopolyTests
         [TestMethod]
         public void BoardIsConstructedWithFortyLocations()
         {
-            var locations = ConstructLocations(40);
-            var board = new Board(locations);
+            var board = MonopolyBoardConstructor.BuildMonopolyBoard();
             Assert.AreEqual(40, board.Locations.Count());
         }
 
-        private IEnumerable<BoardLocation> ConstructLocations(Int32 numberOfLocations)
+        private IEnumerable<IBoardLocation> ConstructLocations(Int32 numberOfLocations)
         {
-            List<BoardLocation> locations = new List<BoardLocation>();
+            List<IBoardLocation> locations = new List<IBoardLocation>();
 
             for (Int32 i = 0; i < numberOfLocations; i++)
                 locations.Add(new BoardLocation());

@@ -7,9 +7,9 @@ namespace Monopoly
 {
     public class Board : Monopoly.IBoard
     {
-        public IEnumerable<BoardLocation> Locations { get; private set; }
+        public IEnumerable<IBoardLocation> Locations { get; private set; }
 
-        public Board(IEnumerable<BoardLocation> locations)
+        public Board(IEnumerable<IBoardLocation> locations)
         {
             Locations = locations;
         }
