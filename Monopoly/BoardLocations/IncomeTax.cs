@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Monopoly.BoardLocationStategies;
 
 namespace Monopoly.BoardLocations
 {
     public class IncomeTax : IBoardLocation
     {
+        private IBoardLocationStrategy strategy;
+
+        public IncomeTax(IBoardLocationStrategy strategy)
+        {
+            this.strategy = strategy;
+        }
+
         public void LandedOn(IPlayer player)
         {
-            if (player.Cash < 2001)
-                player.Cash = Convert.ToInt32(player.Cash * 0.9);
-            else
-                player.Cash = player.Cash - 200;
+            strategy.AffectPlayer(player);
         }
 
         public void PassedBy(IPlayer player)

@@ -48,8 +48,12 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoardTests.cs" />
+    <Compile Include="MonopolyBoardBuilderTests.cs" />
     <Compile Include="DieTests.cs" />
+    <Compile Include="GoStrategyTests.cs" />
+    <Compile Include="GoToJailStrategyTests.cs" />
+    <Compile Include="IncomeTaxStrategyTests.cs" />
+    <Compile Include="LuxuryTaxStrategyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GameTests.cs" />
     <Compile Include="RoundManagerTests.cs" />

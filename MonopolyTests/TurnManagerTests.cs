@@ -21,11 +21,11 @@ namespace MonopolyTests
             dice.Add(new LoadedDie(3));
             dice.Add(new LoadedDie(4));
 
-            board = MonopolyBoardConstructor.BuildMonopolyBoard();
+            board = MonopolyBoardBuilder.BuildMonopolyBoard();
         }
 
         [TestMethod]
-        public void PlayerStartsAtZeroAndRollsASevenDude()
+        public void PlayerStartsAtZeroAndRollsASevenDude() 
         {            
             IPlayer player = new Player("Horse");
             var turnManager = new TurnManager(board, dice);
@@ -87,7 +87,7 @@ namespace MonopolyTests
         public void PlayerStartssOnGoDoesNotCollectTwoHundredDollars()
         {
             IPlayer player = new Player("Horse");
-            player.Location = 33;
+            player.Location = 0;
             var turnManager = new TurnManager(board, dice);
 
             turnManager.PlayTurn(player);
